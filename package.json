@@ -1,0 +1,19 @@
+{
+  "name": "watcher",
+  "version": "0.1.0",
+  "description": "watching",
+  "main": "src/watcher.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phoenix-scitent/watcher.git"
+  },
+  "author": "Manglass",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phoenix-scitent/watcher/issues"
+  },
+  "homepage": "https://github.com/phoenix-scitent/watcher#readme"
+}
