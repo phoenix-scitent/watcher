@@ -2,12 +2,11 @@ import { bus } from 'partybus';
 import { mutationWatch } from './mutationobserver';
 import * as most from 'most';
 
-
 mutationWatch('[learning-element]:not([transformed])', 'learningElements::found');
 
 let cache = {};
 
-const learningElements$ = most.fromEvent('learningElements::found', bus)
+const learningElement$ = most.fromEvent('learningElements::found', bus)
   .tap(els => { if(els.length === 0){ bus.emit('watcher::transformComplete'); cache = {} } })
   .flatMap(els => most.from(els) )
   .filter(el => cache[el.getAttribute('learning-element-ref')] !== true )
