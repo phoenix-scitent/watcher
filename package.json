@@ -4,7 +4,8 @@
   "description": "watching",
   "main": "src/watcher.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "bundle": "gulp bundle",
+    "watch": "gulp watch"
   },
   "repository": {
     "type": "git",
@@ -32,7 +33,15 @@
     "babel-preset-es2015": "^6.22.0",
     "babelify": "^7.3.0",
     "browserify": "^14.0.0",
+    "gulp": "^3.9.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-size": "^2.1.0",
+    "gulp-util": "^3.0.8",
     "most": "^1.2.1",
-    "partybus": "git+ssh://git@github.com/phoenix-scitent/partybus.git#latest"
+    "partybus": "git+ssh://git@github.com/phoenix-scitent/partybus.git#latest",
+    "ramda": "^0.23.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.9.0"
   }
 }

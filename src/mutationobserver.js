@@ -9,7 +9,7 @@ const observer = new MutationObserver(function(mutations) {
     //selector: '[learning-element]:not([transformed])'
     //emitMessage: `learningElement::found`
     const transformables = document.querySelectorAll(selector);
-    if(transformables.length > 0){ bus.emit(emitMessage, [ transformables ]); }
+    if(transformables.length > 0){ bus.emit(emitMessage, transformables); }
   })
 });
 
