@@ -6,8 +6,11 @@ mutationWatch('[learning-element]:not([transformed])', 'learningElements::found'
 
 let cache = {};
 
+most.fromEvent('watcher::transformComplete', bus)
+  .tap(() => { cache = {} })
+  .drain();
+
 const learningElement$ = most.fromEvent('learningElements::found', bus)
-  .tap(els => { if(els.length === 0){ bus.emit('watcher::transformComplete'); cache = {} } })
   .flatMap(els => most.from(els) )
   .filter(el => cache[el.getAttribute('learning-element-ref')] !== true )
   .tap(el => cache[el.getAttribute('learning-element-ref')] = true )
