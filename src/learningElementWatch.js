@@ -14,7 +14,8 @@ const learningElement$ = most.fromEvent('learningElements::found', bus)
   .flatMap(els => most.from(els) )
   .filter(el => cache[el.getAttribute('learning-element-ref')] !== true )
   .tap(el => cache[el.getAttribute('learning-element-ref')] = true )
-  .tap(el => el.setAttribute('transformed', true) );
+  .tap(el => el.setAttribute('transformed', true) )
+  .multicast();
 
 export { learningElement$ };
 
