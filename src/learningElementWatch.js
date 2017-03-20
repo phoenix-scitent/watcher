@@ -10,6 +10,8 @@ most.fromEvent('watcher::transformComplete', bus)
   .tap(() => { cache = {} })
   .drain();
 
+console.log('CREATE WATCH STREAM', Date.now());
+
 const learningElement$ = most.fromEvent('learningElements::found', bus)
   .flatMap(els => most.from(els) )
   .filter(el => cache[el.getAttribute('learning-element-ref')] !== true )
